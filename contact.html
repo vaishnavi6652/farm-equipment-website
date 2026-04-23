@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Tractor Junction</title>
+
+<style>
+body { 
+    margin: 0; 
+    font-family: Arial; 
+}
+
+/* HEADER */
+header {
+    background: #2e7d32;
+    color: white;
+    padding: 15px;
+    position: relative;
+}
+
+/* TITLE LEFT */
+header h2 {
+    margin: 0;
+}
+
+/* PERFECT CENTER NAV (slightly up) */
+nav {
+    position: absolute;
+    left: 50%;
+    top: 40%; /* 👈 yaha change kiya (pehle center tha, ab thoda upar) */
+    transform: translate(-50%, -50%);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* FORM */
+.container {
+    padding: 40px;
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* BUTTON */
+button {
+    background: orange;
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* HOVER GREEN */
+button:hover {
+    background: #2e7d32;
+}
+
+/* FOOTER */
+footer {
+    background: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h2>🚜 Tractor Junction</h2>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Contact Us</h2>
+
+    <form onsubmit="submitForm(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <p id="msg"></p>
+</div>
+
+<footer>
+    <p>© 2026 Tractor Junction</p>
+</footer>
+
+<script>
+function submitForm(event) {
+    event.preventDefault();
+    document.getElementById("msg").innerText = "Message sent successfully!";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to Tractor Junction</title>
+
+<style>
+
+/* BODY */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('indexbackground.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* HEADER */
+header {
+    background-color: #2e7d32;
+    color: white;
+    padding: 10px 20px;
+    position: relative;
+    height: 70px;
+}
+
+/* LOGO (Left) */
+.logo {
+    height: 50px;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+}
+
+/* TITLE (Center) */
+.header-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 50px;
+    letter-spacing: 1px;
+}
+
+/* MENU */
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px;
+}
+
+.menu-box {
+    background: white;
+    width: 200px;
+    height: 120px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu-box:hover {
+    transform: scale(1.1);
+    background: #2e7d32;
+    color: white;
+}
+
+/* SECTION */
+.section {
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+}
+
+/* SERVICES */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* CARDS */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    background: rgba(255,255,255,0.9);
+}
+
+.card h3 {
+    color: #2e7d32;
+}
+
+.card p {
+    color: black;
+}
+
+/* FOOTER */
+footer {
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <img src="logo.png" class="logo" alt="Logo">
+    <div class="header-title">Welcome to Tractor Junction</div>
+</header>
+
+<!-- MENU -->
+<div class="menu">
+
+    <div class="menu-box" onclick="window.location.href='home.html'">
+        Online Shop
+    </div>
+
+    <div class="menu-box" onclick="window.location.href='rent.html'">
+        Rent Products
+    </div>
+
+    <div class="menu-box" onclick="window.location.href='contact.html'">
+        Contact
+    </div>
+
+</div>
+
+<!-- ABOUT -->
+<section class="section">
+    <h2>About Us</h2>
+    <p>
+        Tractor Junction is an online platform where farmers can buy, sell,
+        and rent tractors and agricultural equipment easily.
+    </p>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+    <h2>Our Services</h2>
+
+    <div class="services">
+
+        <div class="card">
+            <h3>Buy Equipment</h3>
+            <p>Purchase new and used tractors and tools online.</p>
+        </div>
+
+        <div class="card">
+            <h3>Rent Equipment</h3>
+            <p>Get tractors and tools on rent at affordable prices.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Tractor Junction | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

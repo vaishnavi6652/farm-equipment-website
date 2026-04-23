@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rent Farm Equipment</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #eef2f3;
+}
+
+nav {
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
+h2 {
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px #ccc;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.video-link {
+    display: block;
+    margin: 10px 0;
+    color: blue;
+    text-decoration: underline;
+}
+
+.price {
+    color: green;
+    font-weight: bold;
+}
+
+.available {
+    color: green;
+    font-weight: bold;
+}
+
+.not-available {
+    color: red;
+    font-weight: bold;
+}
+
+button {
+    background: linear-gradient(45deg, #2e7d32, #66bb6a);
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background: gray;
+    cursor: not-allowed;
+}
+
+.form-section {
+    background: white;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 450px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 5px #2e7d32;
+}
+
+#successMsg {
+    display: none;
+    margin-top: 15px;
+    padding: 12px;
+    background: #d4edda;
+    color: #155724;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>Farm Equipment Rental System</h2>
+    <a href="index.html">Home</a>
+</nav>
+
+<h2>Available Products for Rent</h2>
+
+<div class="container">
+
+<div class="card">
+    <h3>Cultivator</h3>
+    <img src="cultivator.jpg">
+    <a href="https://youtube.com/shorts/wLkGaDQEpuk" target="_blank" class="video-link">Watch Video</a>
+    <p class="price">₹800 / day</p>
+    <p class="available">Available</p>
+    <button onclick="selectProduct('Cultivator')">Rent Now</button>
+</div>
+
+<div class="card">
+    <h3>Rotavator</h3>
+    <img src="rotavator.jpg">
+    <a href="https://youtube.com/shorts/RGNocqu_RIY" target="_blank" class="video-link">Watch Video</a>
+    <p class="price">₹1500 / day</p>
+    <p class="not-available">Not Available</p>
+    <button disabled>Not Available</button>
+</div>
+
+<div class="card">
+    <h3>Seed Driller</h3>
+    <img src="seed driller.jpg">
+    <a href="https://youtube.com/shorts/H_izr0-wqjk" target="_blank" class="video-link">Watch Video</a>
+    <p class="price">₹1200 / day</p>
+    <p class="available">Available</p>
+    <button onclick="selectProduct('Seed Driller')">Rent Now</button>
+</div>
+
+<div class="card">
+    <h3>Trolley</h3>
+    <img src="trolley.jpg">
+    <a href="https://youtube.com/shorts/LZRBBDf1Qkk" target="_blank" class="video-link">Watch Video</a>
+    <p class="price">₹2000 / day</p>
+    <p class="available">Available</p>
+    <button onclick="selectProduct('Trolley')">Rent Now</button>
+</div>
+
+<div class="card">
+    <h3>Planter</h3>
+    <img src="planter.jpg">
+    <a href="https://youtu.be/2Vtz4kmz8Pw" target="_blank" class="video-link">Watch Video</a>
+    <p class="price">₹1300 / day</p>
+    <p class="not-available">Not Available</p>
+    <button disabled>Not Available</button>
+</div>
+
+<div class="card">
+    <h3>Water Tanker</h3>
+    <img src="watertanker.jpg">
+    <a href="https://youtube.com/shorts/aI52n7cdSwY" target="_blank" class="video-link">Watch Video</a>
+    <p class="price">₹2500 / day</p>
+    <p class="available">Available</p>
+    <button onclick="selectProduct('Water Tanker')">Rent Now</button>
+</div>
+
+</div>
+
+<div class="form-section">
+    <h2>Rent Equipment</h2>
+
+    <form onsubmit="return submitForm()">
+
+        <input type="text" placeholder="Full Name" required>
+        <input type="tel" placeholder="Mobile Number" required>
+        <input type="email" placeholder="Email Address" required>
+
+        <select id="product" required>
+            <option value="">Select Product</option>
+            <option>Cultivator</option>
+            <option>Rotavator</option>
+            <option>Seed Driller</option>
+            <option>Trolley</option>
+            <option>Planter</option>
+            <option>Water Tanker</option>
+        </select>
+
+        <input type="date" required>
+        <input type="number" placeholder="Number of Days" required>
+
+        <input type="text" placeholder="Estimated Price (₹ Enter manually)" readonly>
+
+        <textarea placeholder="Address" required></textarea>
+
+        <button type="submit">Confirm Rent</button>
+
+    </form>
+
+    <div id="successMsg">
+        ✅ Rent request submitted successfully!
+    </div>
+
+    <div style="background:#e8f5e9;padding:10px;margin-top:15px;border-radius:8px;text-align:center;">
+        📩 Confirmation will be sent to your email after booking
+    </div>
+
+</div>
+
+<script>
+function selectProduct(productName) {
+    document.getElementById("product").value = productName;
+    window.scrollTo(0, document.body.scrollHeight);
+}
+
+function submitForm() {
+    document.getElementById("successMsg").style.display = "block";
+    return false;
+}
+</script>
+
+</body>
+</html>
